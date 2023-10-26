@@ -38,10 +38,9 @@ export default function Header() {
                     </Link>
                 ))}
                 <div className={styles.lang}>
-                                <Image src="/images/indonesia.svg" width={20} height={20} />
-                                <p>IND</p>
-                                </div>
-
+                    <Image src="/images/indonesia.svg" width={20} height={20} />
+                    <p>IND</p>
+                </div>
             </div>
         </header>
     );

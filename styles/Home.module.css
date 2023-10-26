@@ -1,4 +1,3 @@
-
 .container {
     width: 100%;
     min-height: 100vh;
@@ -7,14 +6,59 @@
 .jumbotronContainer {
     display: flex;
     width: 100%;
+    min-height: 80vh;
     padding-top: 2rem;
 }
 
 .jumbotronBg {
     position: absolute;
     left: 0;
+    z-index: 5;
 }
 
+.jumbotronContent {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    justify-content: space-around;
+    z-index: 50;
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.jumbotronText {
+    color: var(--Black, #333);
+    font-family: Raleway;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.jumbotronSubtext {
+    color: var(--Black, #333);
+    font-family: Raleway;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 2rem;
+}
+
+.jumbotronAssetTop {
+    position: absolute;
+    z-index: 10;
+    top: 15%;
+    right: 40%;
+}
+
+.jumbotronAssetBottom {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 10%;
+}
 
 .main {
     display: flex;

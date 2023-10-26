@@ -1,0 +1,32 @@
+.header {
+    background: rgba(255, 255, 255, 0.3);
+
+    box-shadow: 0px 10px 100px 0px rgba(63, 39, 102, 0.04);
+    backdrop-filter: blur(35px);
+
+    position: fixed;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.router {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.router-text {
+    color: var(--Black, #333);
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}

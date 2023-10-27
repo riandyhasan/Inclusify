@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css';
 import Jumbotron from '../components/Pages/Landing/Jumbotron';
 import BelajarSekarang from '../components/Pages/Landing/BelajarSekarang';
 import KategoriKelas from '../components/Pages/Landing/KategoriKelas';
+import TentangKami from '../components/Pages/Landing/TentangKami';
 
 export default function Home() {
     return (
@@ -17,6 +18,7 @@ export default function Home() {
                 <Jumbotron />
                 <BelajarSekarang />
                 <KategoriKelas />
+                <TentangKami />
             </main>
         </div>
     );

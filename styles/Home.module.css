@@ -73,6 +73,7 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 5rem;
+    position: relative;
 }
 
 .bsContainer h2 {
@@ -115,13 +116,141 @@
 
 .kategoriContainer {
     display: flex;
+    position: relative;
+    flex-direction: column;
     width: 100%;
-    min-height: 80vh;
     padding-top: 2rem;
 }
 
 .kategoriBg {
     position: absolute;
+    top: 0;
+    margin-top: -10%;
     left: 0;
     z-index: 5;
+}
+
+.kategoriTitle {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-left: 25%;
+    position: relative;
+    z-index: 10;
+}
+
+.kategoriTitle h2 {
+    color: var(--Red, #fe5c6b);
+    font-family: Raleway;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.kategoriAssetBottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 25;
+    margin-bottom: -20%;
+}
+
+.kategoriCardContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 8rem;
+    position: relative;
+    z-index: 30;
+    cursor: pointer;
+    margin-top: 3rem;
+}
+
+.kategoriCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 15px 150px 0px rgba(63, 39, 102, 0.04);
+    backdrop-filter: blur(52.5px);
+}
+
+.kategoriCard p {
+    color: var(--Black, #333);
+    font-family: Raleway;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.kategoriCard img {
+    width: 400px;
+}
+
+.aboutUsContainer {
+    width: 100%;
+    display: flex;
+    background: rgba(246, 246, 246, 0.5);
+    flex-direction: column;
+    z-index: 20;
+    position: relative;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    margin-top: 10%;
+}
+
+.aboutUsContainer h2 {
+    color: var(--Black, #333);
+    font-family: Raleway;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-left: 5rem;
+    text-align: center;
+}
+
+.aboutUsContainer p {
+    width: 80%;
+    color: var(--Black, #333);
+    text-align: justify;
+    font-family: Raleway;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    margin-left: 6rem;
+}
+
+.aboutUsContent {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-right: 8rem;
+    padding-left: 5rem;
+}
+
+.aboutUsImageContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding-top: 9rem;
+}
+
+.aboutUsImage {
+    box-shadow: 0px 4px 35px 0px rgba(51, 51, 51, 0.25);
+    border-width: 2rem;
+    background-color: white;
+    padding-top: 0.8rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    padding-bottom: 3rem;
+}
+.aboutUsImage img {
+    width: 300px;
 }

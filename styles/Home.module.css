@@ -254,3 +254,114 @@
 .aboutUsImage img {
     width: 300px;
 }
+
+.aboutUsBottomAsset {
+    position: absolute;
+    right: 0;
+    bottom: 12%;
+    z-index: -1;
+}
+
+.bottomContainer {
+    display: flex;
+    width: 100%;
+    position: relative;
+    flex-direction: column;
+}
+
+.bottomBg {
+    position: absolute;
+    left: 0;
+    margin-top: -35%;
+    z-index: 5;
+}
+
+.visiContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 15rem;
+    position: relative;
+    z-index: 10;
+    gap: 6rem;
+}
+
+.visiContainer h2 {
+    color: var(--Black, #333);
+    font-family: Raleway;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.visiContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.visiCard {
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.7);
+
+    box-shadow: 0px 10px 100px 0px rgba(63, 39, 102, 0.04);
+    backdrop-filter: blur(35px);
+    padding: 2rem;
+    max-width: 360px;
+    color: var(--Black, #333);
+    text-align: center;
+    font-family: Raleway;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.misiCard {
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.7);
+
+    box-shadow: 0px 10px 100px 0px rgba(63, 39, 102, 0.04);
+    backdrop-filter: blur(35px);
+    padding: 0.2rem;
+    max-width: 700px;
+    color: var(--Black, #333);
+    font-family: Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    display: flex;
+}
+
+.partnerContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    padding-top: 4rem;
+}
+
+.partnerContainer h2 {
+    color: var(--Black, #333);
+    text-align: center;
+    font-family: Raleway;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.partners {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+}

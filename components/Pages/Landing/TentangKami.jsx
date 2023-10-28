@@ -4,6 +4,7 @@ import styles from '../../../styles/Home.module.css';
 export default function TentangKami() {
     return (
         <div className={styles.aboutUsContainer}>
+            <img src={'/images/landing-asset5.svg'} className={styles.aboutUsBottomAsset} />
             <div className={styles.aboutUsContent}>
                 <div>
                     <h2>Tentang Kami</h2>

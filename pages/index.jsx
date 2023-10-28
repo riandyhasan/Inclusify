@@ -4,6 +4,7 @@ import Jumbotron from '../components/Pages/Landing/Jumbotron';
 import BelajarSekarang from '../components/Pages/Landing/BelajarSekarang';
 import KategoriKelas from '../components/Pages/Landing/KategoriKelas';
 import TentangKami from '../components/Pages/Landing/TentangKami';
+import VisiAnggota from '../components/Pages/Landing/VisiAnggota';
 
 export default function Home() {
     return (
@@ -19,6 +20,7 @@ export default function Home() {
                 <BelajarSekarang />
                 <KategoriKelas />
                 <TentangKami />
+                <VisiAnggota />
             </main>
         </div>
     );

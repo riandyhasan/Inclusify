@@ -10,7 +10,7 @@ export default function BelajarSekarang() {
             </p>
             <p>Bersama-sama membuka pintu kesempatan bagi setiap siswa untuk meraih potensi penuh mereka!</p>
             <button>Belajar Sekarang!</button>
-            <img src="/images/landing-asset3.svg" />
+            <img src="/images/landing-asset3.svg" alt="asset" />
         </div>
     );
 }

@@ -4,7 +4,7 @@ import styles from '../../../styles/Home.module.css';
 export default function TentangKami() {
     return (
         <div className={styles.aboutUsContainer}>
-            <img src={'/images/landing-asset5.svg'} className={styles.aboutUsBottomAsset} />
+            <img src={'/images/landing-asset5.svg'} className={styles.aboutUsBottomAsset} alt="asset-bottom" />
             <div className={styles.aboutUsContent}>
                 <div>
                     <h2>Tentang Kami</h2>
@@ -26,13 +26,13 @@ export default function TentangKami() {
 
                 <div className={styles.aboutUsImageContainer}>
                     <div className={styles.aboutUsImage}>
-                        <img src={'/images/about-us1.JPG'} />
+                        <img src={'/images/about-us1.JPG'} alt="about-us1" />
                     </div>
                     <div className={styles.aboutUsImage}>
-                        <img src={'/images/about-us2.jpg'} />
+                        <img src={'/images/about-us2.jpg'} alt="about-us2" />
                     </div>
                     <div className={styles.aboutUsImage}>
-                        <img src={'/images/about-us3.jpg'} />
+                        <img src={'/images/about-us3.jpg'} alt="about-us3" />
                     </div>
                 </div>
             </div>

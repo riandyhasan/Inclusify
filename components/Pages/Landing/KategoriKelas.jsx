@@ -5,7 +5,7 @@ function KelasCard({ kelas }) {
     const image = kelas === 'SD' ? '/images/sd.png' : '/images/smp.png';
     return (
         <div className={styles.kategoriCard}>
-            <img src={image} />
+            <img src={image} alt={kelas} />
             <p>{kelas}</p>
         </div>
     );
@@ -14,10 +14,10 @@ function KelasCard({ kelas }) {
 export default function KategoriKelas() {
     return (
         <div className={styles.kategoriContainer}>
-            <img src={'/images/bg-landing2.png'} className={styles.kategoriBg} />
-            <img src={'/images/landing-asset4.svg'} className={styles.kategoriAssetBottom} />
+            <img src={'/images/bg-landing2.png'} className={styles.kategoriBg} alt="bg" />
+            <img src={'/images/landing-asset4.svg'} className={styles.kategoriAssetBottom} alt="asset-bottom" />
             <div className={styles.kategoriTitle}>
-                <img src={'/images/kelas.svg'} />
+                <img src={'/images/kelas.svg'} alt="kelas"/>
                 <h2>Kategori Kelas</h2>
             </div>
             <div className={styles.kategoriCardContainer}>

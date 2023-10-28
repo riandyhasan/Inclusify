@@ -38,7 +38,7 @@ function Card({ bg, name, jurusan }) {
                     <p>{jurusan}</p>
                 </div>
                 <div className={styles.linkedin}>
-                    <img src="/images/Linkedin.svg" />
+                    <img src="/images/Linkedin.svg" alt="linkedin" />
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@ function Card({ bg, name, jurusan }) {
 export default function VisiAnggota() {
     return (
         <div className={styles.bottomContainer}>
-            <img src={'/images/bg-landing3.png'} className={styles.bottomBg} />
+            <img src={'/images/bg-landing3.png'} className={styles.bottomBg} alt="bg" />
             <div className={styles.visiContainer}>
                 <div className={styles.visiContent}>
                     <h2>Visi</h2>

@@ -46,3 +46,13 @@
     margin: 0;
     font-weight: 300;
 }
+
+.footer {
+    background: var(--Black, #333);
+    display: flex;
+    padding: 99.772px 120px 98.772px 120px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: white;
+}

@@ -13,7 +13,7 @@ export default function Jumbotron() {
                     <div className={styles.jumbotronSubtext}>Bersama-sama Menuju Masa Depan yang Lebih Inklusif</div>
                 </div>
                 <div>
-                    <img src="/images/illustration-landing.png" />
+                    <img src="/images/illustration-landing.png" alt="illustration" />
                 </div>
             </div>
         </div>

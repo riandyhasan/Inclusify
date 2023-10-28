@@ -52,7 +52,7 @@ export default function VisiAnggota() {
             <div className={styles.visiContainer}>
                 <div className={styles.visiContent}>
                     <h2>Visi</h2>
-                    <div className={styles.visiCard}>"Mereformasi Pendidikan Khusus melalui pembelajaran inklusif berbasis teknologi."</div>
+                    <div className={styles.visiCard}>{`"Mereformasi Pendidikan Khusus melalui pembelajaran inklusif berbasis teknologi."`}</div>
                 </div>
                 <div className={styles.visiContent}>
                     <h2>Misi</h2>

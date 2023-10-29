@@ -222,4 +222,60 @@
 
     box-shadow: 0px 15px 150px 0px rgba(63, 39, 102, 0.04);
     backdrop-filter: blur(52.5px);
+    text-align: center;
+    color: var(--Black, #333);
+    text-align: center;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.answerMatch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.7);
+
+    box-shadow: 0px 15px 150px 0px rgba(63, 39, 102, 0.04);
+    backdrop-filter: blur(52.5px);
+    text-align: center;
+    color: var(--Black, #333);
+    text-align: center;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.answerCard {
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.7);
+
+    box-shadow: 0px 15px 150px 0px rgba(63, 39, 102, 0.04);
+    backdrop-filter: blur(52.5px);
+    color: var(--Black, #333);
+    text-align: center;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 1rem 4rem;
+    cursor: grab;
+}
+
+.gameButtons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
 }

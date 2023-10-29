@@ -7,7 +7,7 @@ const class_card = [
     {
         name: 'Warna',
         desc: 'Merah, kuning, hijau, di langit yang biru. Ada warna apalagi ya selain itu?',
-        link: '/sdlb/1/warna',
+        link: '/study/sdlb/1/warna',
     },
 ];
 

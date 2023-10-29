@@ -50,9 +50,11 @@
 .footer {
     background: var(--Black, #333);
     display: flex;
-    padding: 99.772px 120px 98.772px 120px;
     justify-content: center;
+    padding: 2rem 2rem;
     align-items: center;
     flex-shrink: 0;
     color: white;
+    position: relative;
+    z-index: 50;
 }

@@ -31,10 +31,10 @@ const class_card = [
 
 function Card({ num, name }) {
     return (
-        <div className={styles.sdCard}>
-            <div className={styles.sdCardClass}>{num}</div>
-            <div className={styles.sdCardRight}>
-                <div className={styles.sdCardName}>{name}</div>
+        <div className={styles.card}>
+            <div className={styles.cardClass}>{num}</div>
+            <div className={styles.cardRight}>
+                <div className={styles.cardName}>{name}</div>
                 <div>
                     <button>Pilih</button>
                 </div>
@@ -45,27 +45,28 @@ function Card({ num, name }) {
 
 export default function SDLB() {
     return (
-        <div className={styles.sdContainer}>
+        <div className={styles.container}>
             <Head>
                 <title>Inclusify | SDLB</title>
                 <meta name="description" content="Membuka pintu kesempatan untuk setiap siswa" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={styles.sdMain}>
-                <img src={'/images/sdlb-bg.png'} className={styles.sdBg} alt="bg-sd" />
-                <img src={'/images/sd-asset1.svg'} className={styles.sdAssetTop} alt="asset-sd" />
+            <main className={styles.main}>
+                <img src={'/images/sdlb-bg.png'} className={styles.bg} alt="bg-sd" />
+                <img src={'/images/sd-asset1.svg'} className={styles.assetTop} alt="asset-sd" />
+                <img src={'/images/sd-asset2.svg'} className={styles.assetBottom} alt="asset-sd2" />
                 <Link href="/">
-                    <div className={styles.sdBack}>
+                    <div className={styles.back}>
                         <img src={'/images/keyboard_arrow_left.svg'} alt="back" />
                         <h4>Home</h4>
                     </div>
                 </Link>
-                <div className={styles.sdContent}>
+                <div className={styles.content}>
                     <h2>SDLB</h2>
-                    <div className={styles.sdCards}>
+                    <div className={styles.cards}>
                         {class_card.map((c, i) => (
-                            <Card num={c.class} name={c.name} />
+                            <Card num={c.class} name={c.name} key={i} />
                         ))}
                     </div>
                 </div>

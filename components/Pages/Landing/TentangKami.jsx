@@ -3,7 +3,7 @@ import styles from '../../../styles/Home.module.css';
 
 export default function TentangKami() {
     return (
-        <div className={styles.aboutUsContainer}>
+        <div id="about-us" className={styles.aboutUsContainer}>
             <img src={'/images/landing-asset5.svg'} className={styles.aboutUsBottomAsset} alt="asset-bottom" />
             <div className={styles.aboutUsContent}>
                 <div>

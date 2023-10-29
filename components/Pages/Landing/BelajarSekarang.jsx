@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../../../styles/Home.module.css';
+import Link from 'next/link';
 
 export default function BelajarSekarang() {
     return (
@@ -9,7 +10,9 @@ export default function BelajarSekarang() {
                 Kami menghubungkan <b>anak dengan kemampuan istimewa</b> dengan <b style={{ color: '#FE5C6B' }}>#EdukasiTanpaBatas</b>
             </p>
             <p>Bersama-sama membuka pintu kesempatan bagi setiap siswa untuk meraih potensi penuh mereka!</p>
-            <button>Belajar Sekarang!</button>
+            <Link href="#study">
+                <button>Belajar Sekarang!</button>
+            </Link>
             <img src="/images/landing-asset3.svg" alt="asset" />
         </div>
     );

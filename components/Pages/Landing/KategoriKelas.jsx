@@ -14,7 +14,7 @@ function KelasCard({ kelas }) {
 
 export default function KategoriKelas() {
     return (
-        <div className={styles.kategoriContainer}>
+        <div id="study" className={styles.kategoriContainer}>
             <img src={'/images/bg-landing2.png'} className={styles.kategoriBg} alt="bg" />
             <img src={'/images/landing-asset4.svg'} className={styles.kategoriAssetBottom} alt="asset-bottom" />
             <div className={styles.kategoriTitle}>

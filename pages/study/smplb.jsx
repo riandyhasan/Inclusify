@@ -24,7 +24,9 @@ function Card({ num, name }) {
             <div className={styles.cardRight}>
                 <div className={styles.cardName}>{name}</div>
                 <div>
-                    <button>Pilih</button>
+                    <Link href="/coming-soon">
+                        <button>Pilih</button>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -13,12 +13,7 @@
     position: relative;
     padding-bottom: 5rem;
     min-height: 90vh;
-}
-
-.bg {
-    position: absolute;
-    left: 0;
-    z-index: 1;
+    background-image: url('../public/images/comingsoon.png');
 }
 
 .comingSoonText {

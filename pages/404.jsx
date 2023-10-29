@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import styles from '../styles/Common.module.css';
 
-export default function ComingSoon() {
+export default function NotFound() {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Inclusify | Coming Soon</title>
+                <title>Inclusify | Not Found</title>
                 <meta name="description" content="Membuka pintu kesempatan untuk setiap siswa" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
@@ -13,7 +13,7 @@ export default function ComingSoon() {
             <main className={styles.main}>
                 <img src={'/images/cone.png'} className={styles.cone} alt="cone" />
                 <h1 className={styles.comingSoonText}>
-                    Coming <br /> Soon
+                    Not <br /> Found
                 </h1>
             </main>
         </div>

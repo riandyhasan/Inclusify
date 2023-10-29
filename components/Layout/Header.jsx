@@ -29,7 +29,7 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <Link href="/">
-                <Image src="/images/logo-with-text.png" width={150} height={41.25} alt="logo"/>
+                <Image src="/images/logo-with-text.png" width={150} height={41.25} alt="logo" />
             </Link>
             <div className={styles.router}>
                 {ROUTES.map((r, i) => (

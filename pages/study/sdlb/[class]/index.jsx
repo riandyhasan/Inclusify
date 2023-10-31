@@ -5,9 +5,9 @@ import { useRouter } from 'next/router';
 
 const class_card = [
     {
-        name: 'Warna',
-        desc: 'Merah, kuning, hijau, di langit yang biru. Ada warna apalagi ya selain itu?',
-        link: '/study/sdlb/1/warna',
+        name: 'Bumi',
+        desc: 'Di bumi kita ada apa saja?',
+        link: '/study/sdlb/6/bumi',
     },
 ];
 

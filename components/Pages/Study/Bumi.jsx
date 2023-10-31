@@ -17,15 +17,15 @@ const DraggableAnswerCard = ({ name, onDrop }) => {
     );
 };
 
-const DroppableColorCard = ({ color, name, onDrop, matched }) => {
+const DroppableColorCard = ({ image, name, onDrop, matched }) => {
     const [, ref] = useDrop({
         accept: ItemTypes.ANSWER_CARD,
         drop: (item) => onDrop(item.name, name),
     });
     const match = matched.includes(name);
     return (
-        <div ref={ref} className={styles.cardWarna}>
-            <div className={styles.warna} style={{ background: color }} />
+        <div ref={ref} className={styles.cardBumi}>
+            <div className={styles.bumi} style={{ backgroundImage: `url(${image})` }} />
             <div className={match ? styles.answerMatch : styles.answer}>{match ? name : null}</div>
         </div>
     );

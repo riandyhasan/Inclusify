@@ -6,6 +6,7 @@ const class_card = [
     {
         class: 1,
         name: 'Angka, Huruf, Warna, Penjumlahan',
+        link: '/coming-soon',
         link: '/study/sdlb/1',
     },
     {
@@ -31,7 +32,7 @@ const class_card = [
     {
         class: 6,
         name: 'Prosedur Keselamatan Umum, Bumi, Hewan',
-        link: '/coming-soon',
+        link: '/study/sdlb/6',
     },
 ];
 

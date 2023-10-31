@@ -3,31 +3,39 @@ import Head from 'next/head';
 import styles from '../../../../../styles/Study.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { DraggableAnswerCard, DroppableColorCard } from '../../../../../components/Pages/Study/Warna';
+import { DraggableAnswerCard, DroppableColorCard } from '../../../../../components/Pages/Study/Bumi';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { IoVolumeHighSharp, IoVolumeMuteSharp } from 'react-icons/io5';
 
-const colors_card = [
+const image_cards = [
     {
-        name: 'Merah',
-        color: '#F52134',
+        name: 'Air Laut',
+        image: '/images/bumi/air-laut.png',
     },
     {
-        name: 'Biru',
-        color: '#13FCFF',
+        name: 'Batu Karang',
+        image: '/images/bumi/batu-karang.png',
     },
     {
-        name: 'Hijau',
-        color: '#43BF08',
+        name: 'Perahu',
+        image: '/images/bumi/perahu.png',
     },
     {
-        name: 'Jingga',
-        color: '#FF7714',
+        name: 'Asap Kapal',
+        image: '/images/bumi/asap-kapal.png',
+    },
+    {
+        name: 'Angin',
+        image: '/images/bumi/angin.png',
+    },
+    {
+        name: 'Pasir',
+        image: '/images/bumi/pasir.png',
     },
 ];
 
-const answers = ['Merah', 'Biru', 'Hijau', 'Jingga'];
+const answers = ['Air Laut', 'Batu Karang', 'Perahu', 'Asap Kapal', 'Angin', 'Pasir'];
 
 function titleCase(inputString) {
     var words = inputString?.toLowerCase()?.split(' ');
@@ -128,10 +136,10 @@ export default function SDLB() {
                 </Link>
                 <div className={styles.content}>
                     <DndProvider backend={HTML5Backend}>
-                        <h2>{titleCase(router.query.game)}</h2>
+                        <h2>Bumi</h2>
                         <div className={styles.gameCards}>
-                            {colors_card.map((c, i) => (
-                                <DroppableColorCard key={i} color={c.color} name={c.name} onDrop={handleDrop} matched={matched} />
+                            {image_cards.map((c, i) => (
+                                <DroppableColorCard key={i} image={c.image} name={c.name} onDrop={handleDrop} matched={matched} />
                             ))}
                         </div>
                         <div className={styles.gameCards} style={{ marginTop: '4rem' }}>

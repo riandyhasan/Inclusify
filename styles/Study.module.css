@@ -423,3 +423,66 @@
     cursor: pointer;
     font-size: 18px;
 }
+
+.imageCard {
+    width: 240px;
+height: 160px;
+flex-shrink: 0;
+    border-radius: 18px;
+background: rgba(255, 255, 255, 0.70);
+
+box-shadow: 0px 18px 180px 0px rgba(63, 39, 102, 0.04);
+backdrop-filter: blur(63.000003814697266px);
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.imageDragCards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.imageGame {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.dropCardImage {
+    width: 546px;
+    height: 564px;
+    position: relative;
+}
+
+.mata {
+    position: absolute;
+    right: 120px;
+    top: 160px;
+    width: 85px;
+}
+
+.mulut {
+    position: absolute;
+    right: 75px;
+    top: 175px;
+    width: 85px;
+}
+
+.kaki {
+    position: absolute;
+    right: 160px;
+    bottom: 40px;
+    width: 175px;
+}
+
+.sayap {
+    position: absolute;
+    left: 60px;
+    bottom: 150px;
+    width: 220px;
+}

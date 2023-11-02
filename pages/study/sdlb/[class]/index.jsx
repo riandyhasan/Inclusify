@@ -9,6 +9,11 @@ const class_card = [
         desc: 'Di bumi kita ada apa saja?',
         link: '/study/sdlb/6/bumi',
     },
+    {
+        name: 'Hewan Peliharaan',
+        desc: 'Ayo bermain dengan hewan peliharaan!',
+        link: '/study/sdlb/6/hewan-peliharaan',
+    },
 ];
 
 function Card({ desc, name, link }) {

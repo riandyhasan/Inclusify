@@ -1,30 +1,33 @@
 import Head from 'next/head';
-import styles from '../../styles/Study.module.css';
+import styles from '../../../styles/Study.module.css';
 import Link from 'next/link';
 
 const class_card = [
     {
         class: 1,
         name: 'Fauna dan Flora, Ekosistem, Iklim',
+        link: '/study/smplb/7',
     },
     {
         class: 2,
         name: 'Peduli Lingkungan, Budaya Indonesia',
+        link: '/coming-soon',
     },
     {
         class: 3,
         name: 'Hidup Sehat, Tubuh, Nutrisi Harian',
+        link: '/coming-soon',
     },
 ];
 
-function Card({ num, name }) {
+function Card({ num, name, link }) {
     return (
         <div className={styles.card}>
             <div className={styles.cardClass}>{num}</div>
             <div className={styles.cardRight}>
                 <div className={styles.cardName}>{name}</div>
                 <div>
-                    <Link href="/coming-soon">
+                    <Link href={link}>
                         <button>Pilih</button>
                     </Link>
                 </div>
@@ -56,7 +59,7 @@ export default function SMPLB() {
                     <h2>SMPLB</h2>
                     <div className={styles.cardsSmp}>
                         {class_card.map((c, i) => (
-                            <Card num={c.class} name={c.name} key={i} />
+                            <Card num={c.class} name={c.name} link={c.link} key={i} />
                         ))}
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import Head from 'next/head';
 import styles from '../../../../../styles/Study.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { DraggableAnswerCard, DroppableCard } from '../../../../../components/Pages/Study/Bumi';
+import { DraggableAnswerCard, DroppableCard } from '../../../../../components/Pages/Study/Game';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { IoVolumeHighSharp, IoVolumeMuteSharp } from 'react-icons/io5';
@@ -47,7 +47,7 @@ function titleCase(inputString) {
     return words?.join(' ');
 }
 
-export default function SDLB() {
+export default function SMPLB() {
     const router = useRouter();
     const [matched, setMatched] = useState([]);
     const [shuffledAnswers, setShuffledAnswers] = useState([]);
@@ -120,15 +120,15 @@ export default function SDLB() {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Inclusify | SDLB</title>
+                <title>Inclusify | SMPLB</title>
                 <meta name="description" content="Membuka pintu kesempatan untuk setiap siswa" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={styles.gameMainSd}>
-                <img src={'/images/sd-asset1.svg'} className={styles.assetTop} alt="asset-sd" />
-                <img src={'/images/sd-asset2.svg'} className={styles.assetBottom} alt="asset-sd2" />
-                <Link href="/study/sdlb/1">
+            <main className={styles.gameMainSmp}>
+                <img src={'/images/smp-asset1.svg'} className={styles.assetTop} alt="asset-smp" />
+                <img src={'/images/smp-asset2.png'} className={styles.assetBottom} alt="asset-smp2" />
+                <Link href="/study/smplb/7">
                     <div className={styles.back}>
                         <img src={'/images/keyboard_arrow_left.svg'} alt="back" />
                         <h4>Kelas {router.query.class}</h4>
@@ -136,7 +136,10 @@ export default function SDLB() {
                 </Link>
                 <div className={styles.content}>
                     <DndProvider backend={HTML5Backend}>
-                        <h2>Bumi</h2>
+                        <h2>
+                            Makhluk Hidup <br />
+                            di Indonesia
+                        </h2>
                         <div className={styles.gameCards}>
                             {image_cards.map((c, i) => (
                                 <DroppableCard key={i} image={c.image} name={c.name} onDrop={handleDrop} matched={matched} />
@@ -161,7 +164,7 @@ export default function SDLB() {
                     </DndProvider>
                 </div>
                 <audio autoPlay loop ref={audioRef}>
-                    <source src={'/audio/BUMI.m4a'} type="audio/mp4" />
+                    <source src={'/audio/Makhluk Hidup Indonesia.m4a'} type="audio/mp4" />
                     Your browser does not support the audio element.
                 </audio>
             </main>

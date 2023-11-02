@@ -3,7 +3,7 @@ import Head from 'next/head';
 import styles from '../../../../../styles/Study.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { DraggableAnswerCard, DroppableCard } from '../../../../../components/Pages/Study/Bumi';
+import { DraggableAnswerCard, DroppableCard } from '../../../../../components/Pages/Study/Game';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { IoVolumeHighSharp, IoVolumeMuteSharp } from 'react-icons/io5';

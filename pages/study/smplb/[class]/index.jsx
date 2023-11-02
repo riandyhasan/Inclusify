@@ -7,7 +7,7 @@ const class_card = [
     {
         name: 'Makhluk Hidup',
         desc: 'Mari mengenal makhluk hidup di Indonesia',
-        link: '/study/smplb/7/fauna',
+        link: '/study/smplb/7/makhluk-hidup-di-indonesia',
     },
     {
         name: 'Aku Cinta Indonesia',

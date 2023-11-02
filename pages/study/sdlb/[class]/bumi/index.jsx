@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useReducer } from 'react';
 import Head from 'next/head';
 import styles from '../../../../../styles/Study.module.css';
 import Link from 'next/link';
@@ -35,6 +35,22 @@ const image_cards = [
     },
 ];
 
+function CorrectModal() {
+    return (
+        <div className={styles.modal}>
+            <div className={styles.modalContent}>
+                <h2>Hore, benar semua!</h2>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <Link href="/study/sdlb">
+                        <button>Cari Kegiatan</button>
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+
 const answers = ['Air Laut', 'Batu Karang', 'Perahu', 'Asap Kapal', 'Angin', 'Pasir'];
 
 function titleCase(inputString) {
@@ -53,11 +69,16 @@ export default function SDLB() {
     const [shuffledAnswers, setShuffledAnswers] = useState([]);
     const audioRef = useRef(null);
     const [isMuted, setIsMuted] = useState(false);
+    const [isComplete, setIsComplete] = useState(false);
+    const [, forceUpdate] = useReducer((x) => x + 1, 0);
 
     const handleDrop = (answer, colorName) => {
         if (answer === colorName) {
             if (!matched.includes(answer)) {
+                const currLen = matched.length
                 setMatched([...matched, answer]);
+                if (currLen + 1 >= 6) setIsComplete(true);
+                forceUpdate();
             }
         }
     };
@@ -124,6 +145,8 @@ export default function SDLB() {
                 <meta name="description" content="Membuka pintu kesempatan untuk setiap siswa" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+
+            {isComplete && <CorrectModal />}
 
             <main className={styles.gameMainSd}>
                 <img src={'/images/sd-asset1.svg'} className={styles.assetTop} alt="asset-sd" />

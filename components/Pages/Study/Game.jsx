@@ -52,7 +52,9 @@ const DraggableImageCard = ({ name, image, onDrop }) => {
 
     return (
         <div className={styles.imageCard}>
-            <LazyloadImg ref={ref} src={image} />
+            <div ref={ref}>
+             <LazyloadImg  src={image} />
+            </div>
         </div>
     );
 };

@@ -4,6 +4,32 @@ import { useDrop } from 'react-dnd';
 import { ItemTypes } from './ItemTypes';
 import styles from '../../../styles/Study.module.css';
 
+const LineMatchAnswerCard = ({ name, onClick }) => {
+    return (
+        <div id={name + '-end'} className={styles.lineAnswer} style={{ cursor: 'pointer' }} onClick={onClick}>
+            {name}
+        </div>
+    );
+};
+
+const LineMatchImageCard = ({ name, image, onClick, isActive, pos = 'r' }) => {
+    return pos === 'r' ? (
+        <div className={styles.lineCard}>
+            <div className={styles.lineCardImg}>
+                <img src={image} alt={name} />
+            </div>
+            <div id={name + '-start'} className={isActive ? styles.lineCardDotActive : styles.lineCardDot} onClick={onClick} />
+        </div>
+    ) : (
+        <div className={styles.lineCard}>
+            <div id={name + '-start'} className={isActive ? styles.lineCardDotActive : styles.lineCardDot} onClick={onClick} />
+            <div className={styles.lineCardImg}>
+                <img src={image} alt={name} />
+            </div>
+        </div>
+    );
+};
+
 const DraggableAnswerCard = ({ name, onDrop }) => {
     const [, ref] = useDrag({
         type: ItemTypes.ANSWER_CARD,
@@ -24,63 +50,52 @@ const DraggableImageCard = ({ name, image, onDrop }) => {
     });
 
     return (
-        <div  className={styles.imageCard}>
+        <div className={styles.imageCard}>
             <img ref={ref} src={image} />
         </div>
     );
 };
 
 const DroppableImageCard = ({ image, name, onDrop, answers }) => {
-  const [, ref] = useDrop({
-    accept: ItemTypes.ANSWER_CARD,
-    drop: (item, monitor) => {
-  
-        const itemPosition = monitor.getClientOffset();
-        const {x,y} = itemPosition;
-        if (item.name == 'mata'){
-            if ((x >= 200 && x <= 500) && (y >= 140 && y <= 340)) {
-                onDrop(item.name);
+    const [, ref] = useDrop({
+        accept: ItemTypes.ANSWER_CARD,
+        drop: (item, monitor) => {
+            const itemPosition = monitor.getClientOffset();
+            const { x, y } = itemPosition;
+            if (item.name == 'mata') {
+                if (x >= 200 && x <= 500 && y >= 140 && y <= 340) {
+                    onDrop(item.name);
+                }
+            } else if (item.name == 'mulut') {
+                if (x >= 400 && x <= 600 && y >= 200 && y <= 400) {
+                    onDrop(item.name);
+                }
+            } else if (item.name == 'sayap') {
+                if (x >= 40 && x <= 400 && y >= 100 && y <= 400) {
+                    onDrop(item.name);
+                }
+            } else if (item.name == 'kaki') {
+                if (x >= 300 && x <= 500 && y >= 350 && y <= 700) {
+                    onDrop(item.name);
+                }
             }
-        } else if (item.name == 'mulut') {
-            if ((x >= 400 && x <= 600) && (y >= 200 && y <= 400)) {
-                onDrop(item.name);
-            }
-        } else if (item.name == 'sayap') {
-            if ((x >= 40 && x <= 400) && (y >= 100 && y <= 400)) {
-                onDrop(item.name);
-            }
-        } else if (item.name == 'kaki') {
-            if ((x >= 300 && x <= 500) && (y >= 350 && y <= 700)) {
-                onDrop(item.name);
-            }
-        }
-      },
-  });
+        },
+    });
 
-  return (
-    <div ref={ref} className={styles.dropCardImage}>
-      <img src={image} />
+    return (
+        <div ref={ref} className={styles.dropCardImage}>
+            <img src={image} />
 
-      {answers.includes('mata') && (
-        <img src='/images/hewan-peliharaan/mata.png' className={styles.mata} />
-      )}
+            {answers.includes('mata') && <img src="/images/hewan-peliharaan/mata.png" className={styles.mata} />}
 
-      {answers.includes('mulut') && (
-        <img src='/images/hewan-peliharaan/mulut.png' className={styles.mulut} />
-      )}
+            {answers.includes('mulut') && <img src="/images/hewan-peliharaan/mulut.png" className={styles.mulut} />}
 
-      {answers.includes('kaki') && (
-        <img src='/images/hewan-peliharaan/kaki.png' className={styles.kaki} />
-      )}
+            {answers.includes('kaki') && <img src="/images/hewan-peliharaan/kaki.png" className={styles.kaki} />}
 
-      {answers.includes('sayap') && (
-        <img src='/images/hewan-peliharaan/sayap.png' className={styles.sayap} />
-      )}
-    </div>
-  );
+            {answers.includes('sayap') && <img src="/images/hewan-peliharaan/sayap.png" className={styles.sayap} />}
+        </div>
+    );
 };
-
-
 
 const DroppableCard = ({ image, name, onDrop, matched }) => {
     const [, ref] = useDrop({
@@ -107,4 +122,4 @@ const CheckableCard = ({ idx, image, checked, onCheck }) => {
     );
 };
 
-export { DraggableAnswerCard, DroppableCard, CheckableCard, DraggableImageCard,DroppableImageCard };
+export { DraggableAnswerCard, DroppableCard, CheckableCard, DraggableImageCard, DroppableImageCard, LineMatchAnswerCard, LineMatchImageCard };

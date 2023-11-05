@@ -50,7 +50,6 @@ function CorrectModal() {
     );
 }
 
-
 const answers = ['Air Laut', 'Batu Karang', 'Perahu', 'Asap Kapal', 'Angin', 'Pasir'];
 
 function titleCase(inputString) {
@@ -75,7 +74,7 @@ export default function SDLB() {
     const handleDrop = (answer, colorName) => {
         if (answer === colorName) {
             if (!matched.includes(answer)) {
-                const currLen = matched.length
+                const currLen = matched.length;
                 setMatched([...matched, answer]);
                 if (currLen + 1 >= 6) setIsComplete(true);
                 forceUpdate();

@@ -121,7 +121,6 @@ export default function SMPLB() {
         ];
         const isCorrect = checkIfContainsAnyCombination(checked, correctAnswers);
 
-        console.log(checked, isCorrect);
         if (isCorrect) {
             setAnswer(1);
         } else {

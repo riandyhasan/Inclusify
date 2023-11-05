@@ -55,7 +55,7 @@ export default function SDLB() {
         const newAnswers = answers;
         newAnswers.push(name);
         setAnswers(newAnswers);
-        if (newAnswers.length >= 4){
+        if (newAnswers.length >= 4) {
             setIsComplete(true);
             forceUpdate();
         }
@@ -116,7 +116,6 @@ export default function SDLB() {
         };
     }, []);
 
-
     return (
         <div className={styles.container}>
             <Head>
@@ -140,15 +139,15 @@ export default function SDLB() {
                     <DndProvider backend={HTML5Backend}>
                         <h2>Hewan Peliharaan</h2>
                         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-2rem' }}>
-                        <p style={{marginBottom: '2rem'}}>Pasangkan anggota badan ke hewan berikut</p>
+                            <p style={{ marginBottom: '2rem' }}>Pasangkan anggota badan ke hewan berikut</p>
                         </div>
-                        <div className={styles.imageGame}> 
-                        <div className={styles.imageDragCards}>
-                            <DroppableImageCard image={'/images/hewan-peliharaan/full.png'} name={'full'} onDrop={handleDrop} answers={answers}  />
-                        </div>
-                        <div className={styles.imageDragCards} style={{ marginTop: '4rem' }}>
-                            {shuffledAnswers.map((a, i) => (!answers.includes(a.name) ?<DraggableImageCard key={i} name={a.name} image={a.image} />:null))}
-                        </div>
+                        <div className={styles.imageGame}>
+                            <div className={styles.imageDragCards}>
+                                <DroppableImageCard image={'/images/hewan-peliharaan/full.png'} name={'full'} onDrop={handleDrop} answers={answers} />
+                            </div>
+                            <div className={styles.imageDragCards} style={{ marginTop: '4rem' }}>
+                                {shuffledAnswers.map((a, i) => (!answers.includes(a.name) ? <DraggableImageCard key={i} name={a.name} image={a.image} /> : null))}
+                            </div>
                         </div>
 
                         <div className={styles.gameButtons}>

@@ -7,7 +7,7 @@ import { DraggableImageCard, DroppableImageCard } from '../../../../../component
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { IoVolumeHighSharp, IoVolumeMuteSharp } from 'react-icons/io5';
-
+import LazyloadImg from '../../../../../components/Images/LazyloadImg';
 const image_cards = [
     {
         name: 'mata',
@@ -127,11 +127,11 @@ export default function SDLB() {
             {isComplete && <CorrectModal />}
 
             <main className={styles.gameMainSd}>
-                <img src={'/images/sd-asset1.svg'} className={styles.assetTop} alt="asset-sd" />
-                <img src={'/images/sd-asset2.svg'} className={styles.assetBottom} alt="asset-sd2" />
+                <LazyloadImg src={'/images/sd-asset1.svg'} className={styles.assetTop} alt="asset-sd" />
+                <LazyloadImg src={'/images/sd-asset2.svg'} className={styles.assetBottom} alt="asset-sd2" />
                 <Link href="/study/sdlb/1">
                     <div className={styles.back}>
-                        <img src={'/images/keyboard_arrow_left.svg'} alt="back" />
+                        <LazyloadImg src={'/images/keyboard_arrow_left.svg'} alt="back" />
                         <h4>Kelas {router.query.class}</h4>
                     </div>
                 </Link>

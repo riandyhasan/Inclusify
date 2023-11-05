@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styles from '../../../../styles/Study.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
+import LazyloadImg from '../../../../components/Images/LazyloadImg';
 const class_card = [
     {
         name: 'Bumi',
@@ -42,11 +42,11 @@ export default function SDLB() {
             </Head>
 
             <main className={styles.gameMainSd}>
-                <img src={'/images/sd-asset1.svg'} className={styles.assetTop} alt="asset-sd" />
-                <img src={'/images/sd-asset2.svg'} className={styles.assetBottom} alt="asset-sd2" />
+                <LazyloadImg src={'/images/sd-asset1.svg'} className={styles.assetTop} alt="asset-sd" />
+                <LazyloadImg src={'/images/sd-asset2.svg'} className={styles.assetBottom} alt="asset-sd2" />
                 <Link href="/study/sdlb">
                     <div className={styles.back}>
-                        <img src={'/images/keyboard_arrow_left.svg'} alt="back" />
+                        <LazyloadImg src={'/images/keyboard_arrow_left.svg'} alt="back" />
                         <h4>SDLB</h4>
                     </div>
                 </Link>

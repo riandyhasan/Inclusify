@@ -106,7 +106,7 @@
     cursor: pointer;
 }
 
-.bsContainer img {
+.bsContainerAsset {
     position: absolute;
     right: 0;
     top: 30%;
@@ -280,7 +280,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    padding-top: 15rem;
+    padding-top: 5rem;
     position: relative;
     z-index: 10;
     gap: 6rem;

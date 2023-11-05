@@ -1,6 +1,6 @@
 import styles from '../../styles/Layout.module.css';
 import Link from 'next/link';
-
+import LazyloadImg from '../Images/LazyloadImg';
 const medsos = [
     {
         name: 'fb',
@@ -28,7 +28,7 @@ export default function Footer() {
     return (
         <footer className={styles.footer}>
             <div className={styles.footerLeft}>
-                <img src={'/images/logo-with-text.png'} alt="Logo inclusify" />
+                <LazyloadImg src={'/images/logo-with-text.png'} alt="Logo inclusify" />
                 <p>Pendidikan Tanpa Batas, Inklusi Tanpa Henti</p>
                 <p>
                     {'© PT Mitra Edukasi Inklusif, 2023. |'} <br />
@@ -45,11 +45,11 @@ export default function Footer() {
                 <div>
                     <h5>Hubungi Kami</h5>
                     <div className={styles.footerIcon}>
-                        <img src="/images/call.svg" alt="phone icon" />
+                        <LazyloadImg src="/images/call.svg" alt="phone icon" />
                         <p>cs.inclusify@gmail.com</p>
                     </div>
                     <div className={styles.footerIcon}>
-                        <img src="/images/email.svg" alt="email icon" />
+                        <LazyloadImg src="/images/email.svg" alt="email icon" />
                         <p>{'(0858) 7959 1720'}</p>
                     </div>
                 </div>
@@ -58,12 +58,12 @@ export default function Footer() {
             <div className={styles.footerRight}>
                 <h5>Coba Gratis Aplikasi Inclusify</h5>
                 <div className={styles.footerRightImages}>
-                    <img src="/images/app-store.png" alt="app store" />
-                    <img src="/images/google-play.png" alt="play store" />
+                    <LazyloadImg src="/images/app-store.png" alt="app store" />
+                    <LazyloadImg src="/images/google-play.png" alt="play store" />
                 </div>
                 <div className={styles.footerRightImages}>
                     {medsos.map((md, i) => (
-                        <img src={md.image} alt={md.name} key={i} />
+                        <LazyloadImg src={md.image} alt={md.name} key={i} />
                     ))}
                 </div>
             </div>

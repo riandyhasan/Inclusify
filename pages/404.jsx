@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Common.module.css';
-
+import LazyloadImg from '../components/Images/LazyloadImg';
 export default function NotFound() {
     return (
         <div className={styles.container}>
@@ -11,7 +11,7 @@ export default function NotFound() {
             </Head>
 
             <main className={styles.main}>
-                <img src={'/images/cone.png'} className={styles.cone} alt="cone" />
+                <LazyloadImg src={'/images/cone.png'} className={styles.cone} alt="cone" />
                 <h1 className={styles.comingSoonText}>
                     Not <br /> Found
                 </h1>

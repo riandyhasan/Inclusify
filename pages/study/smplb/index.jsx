@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styles from '../../../styles/Study.module.css';
 import Link from 'next/link';
-
+import LazyloadImg from '../../../components/Images/LazyloadImg';
 const class_card = [
     {
         class: 1,
@@ -46,12 +46,12 @@ export default function SMPLB() {
             </Head>
 
             <main className={styles.main}>
-                <img src={'/images/smplb-bg.png'} className={styles.bg} alt="bg-smp" />
-                <img src={'/images/smp-asset1.svg'} className={styles.assetTop} alt="asset-smp" />
-                <img src={'/images/smp-asset2.png'} className={styles.assetBottom} alt="asset-smp2" />
+                <LazyloadImg src={'/images/smplb-bg.png'} className={styles.bg} alt="bg-smp" />
+                <LazyloadImg src={'/images/smp-asset1.svg'} className={styles.assetTop} alt="asset-smp" />
+                <LazyloadImg src={'/images/smp-asset2.png'} className={styles.assetBottom} alt="asset-smp2" />
                 <Link href="/">
                     <div className={styles.back}>
-                        <img src={'/images/keyboard_arrow_left.svg'} alt="back" />
+                        <LazyloadImg src={'/images/keyboard_arrow_left.svg'} alt="back" />
                         <h4>Home</h4>
                     </div>
                 </Link>

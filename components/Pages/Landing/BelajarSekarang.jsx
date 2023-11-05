@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../../styles/Home.module.css';
 import Link from 'next/link';
-
+import LazyloadImg from '../../Images/LazyloadImg';
 export default function BelajarSekarang() {
     return (
         <div className={styles.bsContainer}>
@@ -13,7 +13,7 @@ export default function BelajarSekarang() {
             <Link href="#study">
                 <button>Belajar Sekarang!</button>
             </Link>
-            <img src="/images/landing-asset3.svg" alt="asset" />
+            <LazyloadImg src="/images/landing-asset3.svg" alt="asset" className={styles.bsContainerAsset} />
         </div>
     );
 }

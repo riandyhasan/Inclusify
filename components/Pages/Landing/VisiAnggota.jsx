@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../../../styles/Home.module.css';
+import LazyloadImg from '../../Images/LazyloadImg';
 
 const members = [
     {
@@ -38,7 +39,7 @@ function Card({ bg, name, jurusan }) {
                     <p>{jurusan}</p>
                 </div>
                 <div className={styles.linkedin}>
-                    <img src="/images/Linkedin.svg" alt="linkedin" />
+                    <LazyloadImg src="/images/Linkedin.svg" alt="linkedin" />
                 </div>
             </div>
         </div>
@@ -48,7 +49,7 @@ function Card({ bg, name, jurusan }) {
 export default function VisiAnggota() {
     return (
         <div className={styles.bottomContainer}>
-            <img src={'/images/bg-landing3.png'} className={styles.bottomBg} alt="bg" />
+            <LazyloadImg src={'/images/bg-landing3.png'} className={styles.bottomBg} alt="bg" />
             <div className={styles.visiContainer}>
                 <div className={styles.visiContent}>
                     <h2>Visi</h2>
@@ -78,9 +79,9 @@ export default function VisiAnggota() {
             <div className={styles.partnerContainer}>
                 <h2>Partners</h2>
                 <div className={styles.partners}>
-                    <img src={'/images/unesco.png'} />
-                    <img src={'/images/tanoto.png'} />
-                    <img src={'/images/undip.png'} />
+                    <LazyloadImg src={'/images/unesco.png'} />
+                    <LazyloadImg src={'/images/tanoto.png'} />
+                    <LazyloadImg src={'/images/undip.png'} />
                 </div>
             </div>
         </div>

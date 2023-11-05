@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from '../../../styles/Home.module.css';
+import LazyloadImg from '../../Images/LazyloadImg';
 
 export default function TentangKami() {
     return (
         <div id="about-us" className={styles.aboutUsContainer}>
-            <img src={'/images/landing-asset5.svg'} className={styles.aboutUsBottomAsset} alt="asset-bottom" />
+            <LazyloadImg src={'/images/landing-asset5.svg'} className={styles.aboutUsBottomAsset} alt="asset-bottom" />
             <div className={styles.aboutUsContent}>
                 <div>
                     <h2>Tentang Kami</h2>
@@ -26,13 +27,13 @@ export default function TentangKami() {
 
                 <div className={styles.aboutUsImageContainer}>
                     <div className={styles.aboutUsImage}>
-                        <img src={'/images/about-us1.JPG'} alt="about-us1" />
+                        <LazyloadImg src={'/images/about-us1.JPG'} alt="about-us1" />
                     </div>
                     <div className={styles.aboutUsImage}>
-                        <img src={'/images/about-us2.jpg'} alt="about-us2" />
+                        <LazyloadImg src={'/images/about-us2.jpg'} alt="about-us2" />
                     </div>
                     <div className={styles.aboutUsImage}>
-                        <img src={'/images/about-us3.jpg'} alt="about-us3" />
+                        <LazyloadImg src={'/images/about-us3.jpg'} alt="about-us3" />
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@ import { CheckableCard } from '../../../../../components/Pages/Study/Game';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { IoVolumeHighSharp, IoVolumeMuteSharp } from 'react-icons/io5';
-
+import LazyloadImg from '../../../../../components/Images/LazyloadImg';
 const image_cards = [
     {
         name: '1',
@@ -195,11 +195,11 @@ export default function SMPLB() {
             {renderSubmit()}
 
             <main className={styles.gameMainSmp}>
-                <img src={'/images/smp-asset1.svg'} className={styles.assetTop} alt="asset-smp" />
-                <img src={'/images/smp-asset2.png'} className={styles.assetBottom} alt="asset-smp2" />
+                <LazyloadImg src={'/images/smp-asset1.svg'} className={styles.assetTop} alt="asset-smp" />
+                <LazyloadImg src={'/images/smp-asset2.png'} className={styles.assetBottom} alt="asset-smp2" />
                 <Link href="/study/smplb/7">
                     <div className={styles.back}>
-                        <img src={'/images/keyboard_arrow_left.svg'} alt="back" />
+                        <LazyloadImg src={'/images/keyboard_arrow_left.svg'} alt="back" />
                         <h4>Kelas {router.query.class}</h4>
                     </div>
                 </Link>

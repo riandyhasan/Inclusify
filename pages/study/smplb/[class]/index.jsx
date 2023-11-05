@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styles from '../../../../styles/Study.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
+import LazyloadImg from '../../../../components/Images/LazyloadImg';
 const class_card = [
     {
         name: 'Makhluk Hidup',
@@ -42,11 +42,11 @@ export default function SMPLB() {
             </Head>
 
             <main className={styles.gameMainSmp}>
-                <img src={'/images/smp-asset1.svg'} className={styles.assetTop} alt="asset-smp" />
-                <img src={'/images/smp-asset2.png'} className={styles.assetBottom} alt="asset-smp2" />
-                <Link href="/study/sdlb">
+                <LazyloadImg src={'/images/smp-asset1.svg'} className={styles.assetTop} alt="asset-smp" />
+                <LazyloadImg src={'/images/smp-asset2.png'} className={styles.assetBottom} alt="asset-smp2" />
+                <Link href="/study/smplb">
                     <div className={styles.back}>
-                        <img src={'/images/keyboard_arrow_left.svg'} alt="back" />
+                        <LazyloadImg src={'/images/keyboard_arrow_left.svg'} alt="back" />
                         <h4>SMPLB</h4>
                     </div>
                 </Link>

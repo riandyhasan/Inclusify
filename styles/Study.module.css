@@ -462,6 +462,9 @@
     position: absolute;
     right: 120px;
     top: 160px;
+}
+
+.mata img {
     width: 85px;
 }
 
@@ -469,6 +472,9 @@
     position: absolute;
     right: 75px;
     top: 175px;
+}
+
+.mulut img {
     width: 85px;
 }
 

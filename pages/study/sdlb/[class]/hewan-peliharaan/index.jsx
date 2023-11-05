@@ -146,7 +146,9 @@ export default function SDLB() {
                                 <DroppableImageCard image={'/images/hewan-peliharaan/full.png'} name={'full'} onDrop={handleDrop} answers={answers} />
                             </div>
                             <div className={styles.imageDragCards} style={{ marginTop: '4rem' }}>
-                                {shuffledAnswers.map((a, i) => (!answers.includes(a.name) ? <DraggableImageCard key={i} name={a.name} image={a.image} /> : null))}
+                                {shuffledAnswers.map((a, i) => (
+                                    <DraggableImageCard key={i} name={a.name} image={a.image} isHide={answers.includes(a.name)} />
+                                ))}
                             </div>
                         </div>
 

@@ -44,7 +44,7 @@ const DraggableAnswerCard = ({ name, onDrop }) => {
     );
 };
 
-const DraggableImageCard = ({ name, image, onDrop }) => {
+const DraggableImageCard = ({ name, image, isHide }) => {
     const [, ref] = useDrag({
         type: ItemTypes.ANSWER_CARD,
         item: { name },
@@ -52,9 +52,11 @@ const DraggableImageCard = ({ name, image, onDrop }) => {
 
     return (
         <div className={styles.imageCard}>
-            <div ref={ref}>
-             <LazyloadImg  src={image} />
-            </div>
+            {isHide ? null : (
+                <div ref={ref}>
+                    <LazyloadImg src={image} />
+                </div>
+            )}
         </div>
     );
 };
@@ -66,19 +68,19 @@ const DroppableImageCard = ({ image, name, onDrop, answers }) => {
             const itemPosition = monitor.getClientOffset();
             const { x, y } = itemPosition;
             if (item.name == 'mata') {
-                if (x >= 100 && x <= 500 && y >= 140 && y <= 540) {
+                if (x >= 400 && x <= 550 && y >= 200 && y <= 400) {
                     onDrop(item.name);
                 }
             } else if (item.name == 'mulut') {
-                if (x >= 300 && x <= 700 && y >= 200 && y <= 600) {
+                if (x >= 400 && x <= 600 && y >= 200 && y <= 400) {
                     onDrop(item.name);
                 }
             } else if (item.name == 'sayap') {
-                if (x >= 40 && x <= 500 && y >= 40 && y <= 500) {
+                if (x >= 200 && x <= 400 && y >= 200 && y <= 600) {
                     onDrop(item.name);
                 }
             } else if (item.name == 'kaki') {
-                if (x >= 200 && x <= 500 && y >= 250 && y <= 800) {
+                if (x >= 350 && x <= 500 && y >= 400 && y <= 650) {
                     onDrop(item.name);
                 }
             }

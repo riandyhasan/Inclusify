@@ -77,7 +77,7 @@ export default function SMPLB() {
     const router = useRouter();
     const [checked, setChecked] = useState([]);
     const audioRef = useRef(null);
-    const [isMuted, setIsMuted] = useState(false);
+    const instructionRef = useRef(null);
     const [shuffledAnswers, setShuffledAnswers] = useState([]);
     const [answer, setAnswer] = useState(0);
 
@@ -106,10 +106,15 @@ export default function SMPLB() {
         }
     };
 
-    const handleToggleMute = () => {
-        setIsMuted(!isMuted);
-        if (audioRef.current) {
-            audioRef.current.muted = !isMuted;
+    const handlePlayInstruction = () => {
+        if (audioRef.current && instructionRef.current) {
+            audioRef.current.muted = true;
+
+            instructionRef.current.play();
+
+            instructionRef.current.addEventListener('ended', () => {
+                audioRef.current.muted = false;
+            });
         }
     };
 
@@ -206,7 +211,6 @@ export default function SMPLB() {
                 <div className={styles.content}>
                     <DndProvider backend={HTML5Backend}>
                         <h2>Aku Cinta Indonesia</h2>
-                        <div></div>
                         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-2rem' }}>
                             <p>Klik gambar yang benar dari dua pilihan dibawah ini, pilih gambar yang menggambarkan produksi pangan</p>
                         </div>
@@ -224,8 +228,8 @@ export default function SMPLB() {
                                     />
                                 </svg>
                             </div>
-                            <div style={{ cursor: 'pointer' }} onClick={handleToggleMute}>
-                                {isMuted ? <IoVolumeMuteSharp size={40} /> : <IoVolumeHighSharp size={40} />}
+                            <div style={{ cursor: 'pointer' }} onClick={handlePlayInstruction}>
+                                <IoVolumeHighSharp size={40} />
                             </div>
                             <button className={styles.submit} onClick={handleSubmit}>
                                 Selesai
@@ -235,6 +239,10 @@ export default function SMPLB() {
                 </div>
                 <audio autoPlay loop ref={audioRef}>
                     <source src={'/audio/Aku Cinta Indonesia.m4a'} type="audio/mp4" />
+                    Your browser does not support the audio element.
+                </audio>
+                <audio ref={instructionRef}>
+                    <source src={'/audio/instruksi/aku_cinta_indonesia.m4a'} type="audio/mp4" />
                     Your browser does not support the audio element.
                 </audio>
             </main>

@@ -5,34 +5,25 @@ import LazyloadImg from '../../../components/Images/LazyloadImg';
 const class_card = [
     {
         class: 1,
-        name: 'Fauna dan Flora, Ekosistem, Iklim',
         link: '/study/smplb/7',
     },
     {
         class: 2,
-        name: 'Peduli Lingkungan, Budaya Indonesia',
         link: '/coming-soon',
     },
     {
         class: 3,
-        name: 'Hidup Sehat, Tubuh, Nutrisi Harian',
         link: '/coming-soon',
     },
 ];
 
-function Card({ num, name, link }) {
+function Card({ num, link }) {
     return (
-        <div className={styles.card}>
-            <div className={styles.cardClass}>{num}</div>
-            <div className={styles.cardRight}>
-                <div className={styles.cardName}>{name}</div>
-                <div>
-                    <Link href={link}>
-                        <button>Pilih</button>
-                    </Link>
-                </div>
+        <Link href={link}>
+            <div className={styles.card}>
+                <div className={styles.cardClass}>{num}</div>
             </div>
-        </div>
+        </Link>
     );
 }
 
@@ -57,9 +48,12 @@ export default function SMPLB() {
                 </Link>
                 <div className={styles.content}>
                     <h2>SMPLB</h2>
-                    <div className={styles.cardsSmp}>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-2rem' }}>
+                        <p>Pilih jenjang yang sesuai dengan kelasmu!</p>
+                    </div>
+                    <div className={styles.cards}>
                         {class_card.map((c, i) => (
-                            <Card num={c.class} name={c.name} link={c.link} key={i} />
+                            <Card num={c.class} link={c.link} key={i} />
                         ))}
                     </div>
                 </div>

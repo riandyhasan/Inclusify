@@ -5,26 +5,64 @@ import { useRouter } from 'next/router';
 import LazyloadImg from '../../../../components/Images/LazyloadImg';
 const class_card = [
     {
-        name: 'Makhluk Hidup',
-        desc: 'Mari mengenal makhluk hidup di Indonesia',
+        name: 'Makluk Hidup',
+        image: '/images/smplb/7/makhluk_hidup.png',
         link: '/study/smplb/7/makhluk-hidup-di-indonesia',
+        isActive: true,
+    },
+    {
+        name: 'Iklim',
+        image: '/images/smplb/7/iklim.png',
+        link: '/coming-soon',
+        isActive: false,
+    },
+    {
+        name: 'Ekosistem',
+        image: '/images/smplb/7/ekosistem.png',
+        link: '/coming-soon',
+        isActive: false,
+    },
+    {
+        name: 'Peristiwa',
+        image: '/images/smplb/7/peristiwa.png',
+        link: '/coming-soon',
+        isActive: false,
+    },
+    {
+        name: 'Hidup Sehat',
+        image: '/images/smplb/7/hidup_sehat.png',
+        link: '/coming-soon',
+        isActive: false,
     },
     {
         name: 'Aku Cinta Indonesia',
-        desc: 'Mari mengenal lebih dalam tentang Indonesia',
+        image: '/images/smplb/7/aku_cinta_indonesia.png',
         link: '/study/smplb/7/aku-cinta-indonesia',
+        isActive: true,
+    },
+    {
+        name: 'Peduli Lingkungan',
+        image: '/images/smplb/7/lingkungan.png',
+        link: '/coming-soon',
+        isActive: false,
     },
 ];
 
-function Card({ desc, name, link }) {
+function Card({ image, name, link, isCenter, isActive }) {
     return (
-        <div className={styles.cardGame}>
-            <div className={styles.cardName}>{name}</div>
-            <p>{desc}</p>
-            <div>
-                <Link href={link}>
-                    <button>Pilih</button>
-                </Link>
+        <div className={isCenter ? styles.cardGameCenter : styles.cardGame}>
+            <LazyloadImg src={image} alt={name} />
+            <div className={styles.cardGameRight}>
+                <div className={styles.cardName}>{name}</div>
+                {isActive ? (
+                    <div>
+                        <Link href={link}>
+                            <button>Pilih</button>
+                        </Link>
+                    </div>
+                ) : (
+                    <div className={styles.comingSoon}>Coming Soon</div>
+                )}
             </div>
         </div>
     );
@@ -54,7 +92,7 @@ export default function SMPLB() {
                     <h2>Kelas {router.query.class}</h2>
                     <div className={styles.cards}>
                         {class_card.map((c, i) => (
-                            <Card desc={c.desc} name={c.name} link={c.link} key={i} />
+                            <Card image={c.image} name={c.name} link={c.link} key={i} isCenter={class_card.length % 3 === 1 && i === class_card.length - 1} isActive={c.isActive} />
                         ))}
                     </div>
                 </div>

@@ -38,7 +38,7 @@ const DraggableAnswerCard = ({ name, onDrop }) => {
     });
 
     return (
-        <div ref={ref} className={styles.answerCard}>
+        <div ref={ref} className={styles.answerCardBumi}>
             {name}
         </div>
     );
@@ -111,15 +111,15 @@ const DroppableCard = ({ image, name, onDrop, matched }) => {
     return (
         <div ref={ref} className={styles.cardBumi}>
             <div className={styles.bumi} style={{ backgroundImage: `url(${image})` }} />
-            <div className={match ? styles.answerMatch : styles.answer}>{match ? name : null}</div>
+            <div className={match ? styles.answerMatchBumi : styles.answerBumi}>{match ? name : null}</div>
         </div>
     );
 };
 
 const CheckableCard = ({ idx, image, checked, onCheck }) => {
     return (
-        <div className={styles.cardBumi}>
-            <div className={styles.bumi} style={{ backgroundImage: `url(${image})` }} />
+        <div className={styles.cardCheckable}>
+            <div className={styles.checkableCard} style={{ backgroundImage: `url(${image})` }} />
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <div className={checked.includes(idx) ? styles.checkedAnswerTrue : styles.checkedAnswer} onClick={onCheck} />
             </div>

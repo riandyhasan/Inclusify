@@ -47,7 +47,7 @@ export default function SDLB() {
     const [answers, setAnswers] = useState([]);
     const [shuffledAnswers, setShuffledAnswers] = useState([]);
     const audioRef = useRef(null);
-    const [isMuted, setIsMuted] = useState(false);
+    const instructionRef = useRef(null);
     const [isComplete, setIsComplete] = useState(false);
     const [, forceUpdate] = useReducer((x) => x + 1, 0);
 
@@ -71,10 +71,15 @@ export default function SDLB() {
         }
     };
 
-    const handleToggleMute = () => {
-        setIsMuted(!isMuted);
-        if (audioRef.current) {
-            audioRef.current.muted = !isMuted;
+    const handlePlayInstruction = () => {
+        if (audioRef.current && instructionRef.current) {
+            audioRef.current.muted = true;
+
+            instructionRef.current.play();
+
+            instructionRef.current.addEventListener('ended', () => {
+                audioRef.current.muted = false;
+            });
         }
     };
 
@@ -161,14 +166,18 @@ export default function SDLB() {
                                     />
                                 </svg>
                             </div>
-                            <div style={{ cursor: 'pointer' }} onClick={handleToggleMute}>
-                                {isMuted ? <IoVolumeMuteSharp size={40} /> : <IoVolumeHighSharp size={40} />}
+                            <div style={{ cursor: 'pointer' }} onClick={handlePlayInstruction}>
+                                <IoVolumeHighSharp size={40} />
                             </div>
                         </div>
                     </DndProvider>
                 </div>
                 <audio autoPlay loop ref={audioRef}>
                     <source src={'/audio/Hewan Peliharaan.m4a'} type="audio/mp4" />
+                    Your browser does not support the audio element.
+                </audio>
+                <audio ref={instructionRef}>
+                    <source src={'/audio/instruksi/hewan_peliharaan.m4a'} type="audio/mp4" />
                     Your browser does not support the audio element.
                 </audio>
             </main>

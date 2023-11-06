@@ -6,25 +6,57 @@ import LazyloadImg from '../../../../components/Images/LazyloadImg';
 const class_card = [
     {
         name: 'Bumi',
-        desc: 'Di bumi kita ada apa saja?',
+        image: '/images/sdlb/6/bumi.png',
         link: '/study/sdlb/6/bumi',
+        isActive: true,
+    },
+    {
+        name: 'Tanah',
+        image: '/images/sdlb/6/tanah.png',
+        link: '/coming-soon',
+        isActive: false,
+    },
+    {
+        name: 'Matahari',
+        image: '/images/sdlb/6/matahari.png',
+        link: '/coming-soon',
+        isActive: false,
     },
     {
         name: 'Hewan Peliharaan',
-        desc: 'Ayo bermain dengan hewan peliharaan!',
+        image: '/images/sdlb/6/hewan_peliharaan.png',
         link: '/study/sdlb/6/hewan-peliharaan',
+        isActive: true,
+    },
+    {
+        name: 'Keselamatan Pejalan Kaki',
+        image: '/images/sdlb/6/pejalan_kaki.png',
+        link: '/coming-soon',
+        isActive: false,
+    },
+    {
+        name: 'Keselamatan di Rumah',
+        image: '/images/sdlb/6/rumah.png',
+        link: '/coming-soon',
+        isActive: false,
     },
 ];
 
-function Card({ desc, name, link }) {
+function Card({ image, name, link, isCenter, isActive }) {
     return (
-        <div className={styles.cardGame}>
-            <div className={styles.cardName}>{name}</div>
-            <p>{desc}</p>
-            <div>
-                <Link href={link}>
-                    <button>Pilih</button>
-                </Link>
+        <div className={isCenter ? styles.cardGameCenter : styles.cardGame}>
+            <LazyloadImg src={image} alt={name} />
+            <div className={styles.cardGameRight}>
+                <div className={styles.cardName}>{name}</div>
+                {isActive ? (
+                    <div>
+                        <Link href={link}>
+                            <button>Pilih</button>
+                        </Link>
+                    </div>
+                ) : (
+                    <div className={styles.comingSoon}>Coming Soon</div>
+                )}
             </div>
         </div>
     );
@@ -54,7 +86,7 @@ export default function SDLB() {
                     <h2>Kelas {router.query.class}</h2>
                     <div className={styles.cards}>
                         {class_card.map((c, i) => (
-                            <Card desc={c.desc} name={c.name} link={c.link} key={i} />
+                            <Card image={c.image} name={c.name} link={c.link} key={i} isCenter={class_card.length % 3 === 1 && i === class_card.length - 1} isActive={c.isActive} />
                         ))}
                     </div>
                 </div>

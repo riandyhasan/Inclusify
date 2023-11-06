@@ -5,50 +5,37 @@ import LazyloadImg from '../../../components/Images/LazyloadImg';
 const class_card = [
     {
         class: 1,
-        name: 'Angka, Huruf, Warna, Penjumlahan',
         link: '/coming-soon',
-        link: '/study/sdlb/1',
     },
     {
         class: 2,
-        name: 'Keluarga, Teman, Matematika Dasar',
         link: '/coming-soon',
     },
     {
         class: 3,
-        name: 'Bahasa Inggris Dasar, Tumbuhan, Perkalian',
         link: '/coming-soon',
     },
     {
         class: 4,
-        name: 'Anggota Tubuh, Musik, Seni di Indonesia',
         link: '/coming-soon',
     },
     {
         class: 5,
-        name: 'Matahari, Tata Surya, IPA dasar',
         link: '/coming-soon',
     },
     {
         class: 6,
-        name: 'Prosedur Keselamatan Umum, Bumi, Hewan',
         link: '/study/sdlb/6',
     },
 ];
 
-function Card({ num, name, link }) {
+function Card({ num, link }) {
     return (
-        <div className={styles.card}>
-            <div className={styles.cardClass}>{num}</div>
-            <div className={styles.cardRight}>
-                <div className={styles.cardName}>{name}</div>
-                <div>
-                    <Link href={link}>
-                        <button>Pilih</button>
-                    </Link>
-                </div>
+        <Link href={link}>
+            <div className={styles.card}>
+                <div className={styles.cardClass}>{num}</div>
             </div>
-        </div>
+        </Link>
     );
 }
 
@@ -73,9 +60,12 @@ export default function SDLB() {
                 </Link>
                 <div className={styles.content}>
                     <h2>SDLB</h2>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-2rem' }}>
+                        <p>Pilih jenjang yang sesuai dengan kelasmu!</p>
+                    </div>
                     <div className={styles.cards}>
                         {class_card.map((c, i) => (
-                            <Card num={c.class} name={c.name} link={c.link} key={i} />
+                            <Card num={c.class} link={c.link} key={i} />
                         ))}
                     </div>
                 </div>

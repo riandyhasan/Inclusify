@@ -95,7 +95,7 @@ export default function SMPLB() {
     const [shuffledAnswers, setShuffledAnswers] = useState([]);
     const [shuffledImageCards, setShuffledImageCards] = useState([]);
     const audioRef = useRef(null);
-    const [isMuted, setIsMuted] = useState(false);
+    const instructionRef = useRef(null);
     const [activeName, setActiveName] = useState('');
     const [, forceUpdate] = useReducer((x) => x + 1, 0);
     const [answer, setAnswer] = useState(0);
@@ -169,10 +169,15 @@ export default function SMPLB() {
         setAnswer(1);
     };
 
-    const handleToggleMute = () => {
-        setIsMuted(!isMuted);
-        if (audioRef.current) {
-            audioRef.current.muted = !isMuted;
+    const handlePlayInstruction = () => {
+        if (audioRef.current && instructionRef.current) {
+            audioRef.current.muted = true;
+
+            instructionRef.current.play();
+
+            instructionRef.current.addEventListener('ended', () => {
+                audioRef.current.muted = false;
+            });
         }
     };
 
@@ -241,6 +246,9 @@ export default function SMPLB() {
                         Makhluk Hidup <br />
                         di Indonesia
                     </h2>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-2rem' }}>
+                        <p>Pasangkan gambar dengan box yang tepat!</p>
+                    </div>
                     <Xwrapper>
                         <div className={styles.lineContainer}>
                             <div className={styles.lineImage}>
@@ -274,8 +282,8 @@ export default function SMPLB() {
                                 />
                             </svg>
                         </div>
-                        <div style={{ cursor: 'pointer' }} onClick={handleToggleMute}>
-                            {isMuted ? <IoVolumeMuteSharp size={40} /> : <IoVolumeHighSharp size={40} />}
+                        <div style={{ cursor: 'pointer' }} onClick={handlePlayInstruction}>
+                            <IoVolumeHighSharp size={40} />
                         </div>
                         <button className={styles.submit} onClick={handleSubmit}>
                             Selesai
@@ -284,6 +292,10 @@ export default function SMPLB() {
                 </div>
                 <audio autoPlay loop ref={audioRef}>
                     <source src={'/audio/Makhluk Hidup Indonesia.m4a'} type="audio/mp4" />
+                    Your browser does not support the audio element.
+                </audio>
+                <audio ref={instructionRef}>
+                    <source src={'/audio/instruksi/makhluk_hidup_indonesia.m4a'} type="audio/mp4" />
                     Your browser does not support the audio element.
                 </audio>
             </main>

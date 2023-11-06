@@ -67,7 +67,7 @@ export default function SDLB() {
     const [matched, setMatched] = useState([]);
     const [shuffledAnswers, setShuffledAnswers] = useState([]);
     const audioRef = useRef(null);
-    const [isMuted, setIsMuted] = useState(false);
+    const instructionRef = useRef(null);
     const [isComplete, setIsComplete] = useState(false);
     const [, forceUpdate] = useReducer((x) => x + 1, 0);
 
@@ -91,10 +91,15 @@ export default function SDLB() {
         }
     };
 
-    const handleToggleMute = () => {
-        setIsMuted(!isMuted);
-        if (audioRef.current) {
-            audioRef.current.muted = !isMuted;
+    const handlePlayInstruction = () => {
+        if (audioRef.current && instructionRef.current) {
+            audioRef.current.muted = true;
+
+            instructionRef.current.play();
+
+            instructionRef.current.addEventListener('ended', () => {
+                audioRef.current.muted = false;
+            });
         }
     };
 
@@ -159,7 +164,10 @@ export default function SDLB() {
                 <div className={styles.content}>
                     <DndProvider backend={HTML5Backend}>
                         <h2>Bumi</h2>
-                        <div className={styles.gameCards}>
+                        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-2rem' }}>
+                            <p>Pasangkan kata dengan gambar yang tepat!</p>
+                        </div>
+                        <div className={styles.gameCardsBumi}>
                             {image_cards.map((c, i) => (
                                 <DroppableCard key={i} image={c.image} name={c.name} onDrop={handleDrop} matched={matched} />
                             ))}
@@ -176,14 +184,18 @@ export default function SDLB() {
                                     />
                                 </svg>
                             </div>
-                            <div style={{ cursor: 'pointer' }} onClick={handleToggleMute}>
-                                {isMuted ? <IoVolumeMuteSharp size={40} /> : <IoVolumeHighSharp size={40} />}
+                            <div style={{ cursor: 'pointer' }} onClick={handlePlayInstruction}>
+                                <IoVolumeHighSharp size={40} />
                             </div>
                         </div>
                     </DndProvider>
                 </div>
                 <audio autoPlay loop ref={audioRef}>
                     <source src={'/audio/BUMI.m4a'} type="audio/mp4" />
+                    Your browser does not support the audio element.
+                </audio>
+                <audio ref={instructionRef}>
+                    <source src={'/audio/instruksi/bumi.m4a'} type="audio/mp4" />
                     Your browser does not support the audio element.
                 </audio>
             </main>

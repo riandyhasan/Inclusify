@@ -81,6 +81,7 @@ body {
     margin: 0;
     font-family: Raleway, sans-serif;
     background: var(--White, #f6f6f6);
+    overflow-x: hidden;
 }
 
 a {

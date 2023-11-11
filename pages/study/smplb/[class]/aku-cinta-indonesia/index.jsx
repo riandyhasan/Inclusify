@@ -120,12 +120,10 @@ export default function SMPLB() {
 
     const handleSubmit = () => {
         const correctAnswers = [
-            ['1', '2'],
             ['1', '5'],
-            ['2', '5'],
+            ['5', '1']
         ];
-        const isCorrect = checkIfContainsAnyCombination(checked, correctAnswers);
-
+        const isCorrect = correctAnswers.find((ans) => ans.join(',') === checked.join(','));
         if (isCorrect) {
             setAnswer(1);
         } else {

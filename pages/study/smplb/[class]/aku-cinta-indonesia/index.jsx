@@ -120,8 +120,12 @@ export default function SMPLB() {
 
     const handleSubmit = () => {
         const correctAnswers = [
-            ['1', '5'],
-            ['5', '1']
+            ['1', '2', '5'],
+            ['1', '5', '2'],
+            ['2', '1', '5'],
+            ['2', '5', '1'],
+            ['5', '1', '2'],
+            ['5', '2', '1']
         ];
         const isCorrect = correctAnswers.find((ans) => ans.join(',') === checked.join(','));
         if (isCorrect) {
